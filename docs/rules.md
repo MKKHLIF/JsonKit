@@ -28,7 +28,12 @@
 - No other literal names allowed.
 
 ## Value Definition:
-- `value = false / null / true / object / array / number / string`.
+- `value` = `false / null / true / object / array / number / string`.
+
+
+- `null`  = `%x6e.75.6c.6c`
+- `false` = `%x66.61.6c.73.65`  
+- `true`  = `%x74.72.75.65`    
 
 # Objects:
 
