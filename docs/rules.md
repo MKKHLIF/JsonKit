@@ -63,6 +63,17 @@
     - `frac` is a decimal point followed by digits.
     - `exp` uses `e` or `E` followed by an optional sign and digits.
 
+
+  - `decimal-point` = `%x2E      ; .`
+  - `digit1-9` = `%x31-39         ; 1-9`
+  - `e`  = `%x65 / %x45            ; e E`
+  - `exp`  = `%x65 / %x45`
+  - `frac`  = `decimal-point 1*DIGIT`
+  - `int`  = `zero / ( digit1-9 *DIGIT )`
+  - `minus`  = ` %x2D               ; -`
+  - `plus`  = ` %x2B                ; +`
+  - `zero`  = ` %x30                ; 0`
+
 ## Invalid Numbers:
 - Values like `Infinity` and `NaN` are not permitted.
 
