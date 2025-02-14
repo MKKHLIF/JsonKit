@@ -5,12 +5,12 @@ add_executable(${This} ${SRC_FILES})
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
     set_property(TARGET ${This} PROPERTY CXX_STANDARD 20)
-endif()
+endif ()
 
 #find_package(GTest CONFIG REQUIRED)
 
-#target_link_libraries(${This} PRIVATE GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
+target_link_libraries(${This} PRIVATE GTest::gtest GTest::gtest_main)
 target_link_libraries(${This} PRIVATE JsonKit)
 
-#include(GoogleTest)
-#gtest_discover_tests(${This})
+include(GoogleTest)
+gtest_discover_tests(${This})

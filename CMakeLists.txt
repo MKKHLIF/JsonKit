@@ -13,8 +13,6 @@ project("json_kit")
 
 enable_testing()
 
-add_subdirectory("src")
-add_subdirectory("tests")
 
 find_package(Git QUIET)
 
@@ -39,3 +37,8 @@ endif ()
 if (NOT EXISTS "${PROJECT_SOURCE_DIR}/external/gtest/CMakeLists.txt")
     message(FATAL_ERROR "gtest submodule is missing. Please initialize and update submodules.")
 endif ()
+
+
+add_subdirectory("src")
+add_subdirectory("tests")
+add_subdirectory(external/gtest)
