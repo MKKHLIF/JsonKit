@@ -34,7 +34,7 @@ if (GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
     endif ()
 endif ()
 
-if (NOT EXISTS "${PROJECT_SOURCE_DIR}/external/gtest/CMakeLists.txt")
+if (NOT EXISTS "${PROJECT_SOURCE_DIR}/external/gtest/CMakeLists.txt" OR NOT EXISTS "${PROJECT_SOURCE_DIR}/external/utf8/CMakeLists.txt")
     message(FATAL_ERROR "gtest submodule is missing. Please initialize and update submodules.")
 endif ()
 
@@ -42,3 +42,4 @@ endif ()
 add_subdirectory("src")
 add_subdirectory("tests")
 add_subdirectory(external/gtest)
+add_subdirectory(external/utf8)
