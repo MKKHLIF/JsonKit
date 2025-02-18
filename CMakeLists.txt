@@ -38,8 +38,8 @@ if (NOT EXISTS "${PROJECT_SOURCE_DIR}/external/gtest/CMakeLists.txt" OR NOT EXIS
     message(FATAL_ERROR "gtest submodule is missing. Please initialize and update submodules.")
 endif ()
 
+add_subdirectory(external/gtest)
+add_subdirectory(external/utf8)
 
 add_subdirectory("src")
 add_subdirectory("tests")
-add_subdirectory(external/gtest)
-add_subdirectory(external/utf8)

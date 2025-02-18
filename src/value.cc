@@ -1,4 +1,5 @@
 #include "value.h"
+#include "utf8.h"
 
 std::vector<uint32_t> WHITESPACE_CHARACTERS{
     0x20, // ' '
