@@ -10,7 +10,7 @@ message(STATUS "C++ Compiler: ${CMAKE_CXX_COMPILER}")
 message(STATUS "C++ Compiler Version: ${CMAKE_CXX_COMPILER_VERSION}")
 
 project("json_kit")
-
+ 
 enable_testing()
 
 
