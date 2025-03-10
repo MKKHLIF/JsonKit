@@ -5,8 +5,6 @@
 #include <memory>
 #include <vector>
 
-class Iterator;
-
 struct EncodingOptions {
     bool escapeNonAscii = false;
 
@@ -33,6 +31,38 @@ public:
         Array,
         Object,
     };
+
+    class Iterator {
+    public:
+        Iterator(
+            const Value *container,
+            std::vector<Value>::const_iterator &&nextArrayEntry
+        );
+
+
+        Iterator(
+            const Value *container,
+            std::map<std::string, Value>::const_iterator &&nextObjectEntry
+        );
+
+        void operator++();
+
+        bool operator!=(const Iterator &other) const;
+
+        Iterator &operator*();
+
+        [[nodiscard]] const std::string &key() const;
+
+        [[nodiscard]] const Value &value() const;
+
+    private:
+        const Value *container;
+        std::vector<Value>::const_iterator nextArrayEntry;
+        std::map<std::string, Value>::const_iterator nextObjectEntry;
+    };
+
+
+
 
     ~Value() noexcept;
 
@@ -135,34 +165,6 @@ private:
 };
 
 
-class Iterator {
-public:
-    Iterator(
-        const Value *container,
-        std::vector<Value>::const_iterator &&nextArrayEntry
-    );
-
-
-    Iterator(
-        const Value *container,
-        std::map<std::string, Value>::const_iterator &&nextObjectEntry
-    );
-
-    void operator++();
-
-    bool operator!=(const Iterator &other) const;
-
-    Iterator &operator*();
-
-    [[nodiscard]] const std::string &key() const;
-
-    [[nodiscard]] const Value &value() const;
-
-private:
-    const Value *container;
-    std::vector<Value>::const_iterator nextArrayEntry;
-    std::map<std::string, Value>::const_iterator nextObjectEntry;
-};
 
 
 #endif //VALUE_H
