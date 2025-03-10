@@ -11,3 +11,4 @@ endif ()
 
 target_include_directories(${This} PUBLIC ${CMAKE_SOURCE_DIR}/include)
 target_link_libraries(${This} PRIVATE Utf8)
+target_link_libraries(${This} PRIVATE StringExtensions)
