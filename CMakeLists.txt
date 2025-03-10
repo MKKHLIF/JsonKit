@@ -34,7 +34,9 @@ if (GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
     endif ()
 endif ()
 
-if (NOT EXISTS "${PROJECT_SOURCE_DIR}/external/gtest/CMakeLists.txt" OR NOT EXISTS "${PROJECT_SOURCE_DIR}/external/utf8/CMakeLists.txt" OR NOT EXISTS "${PROJECT_SOURCE_DIR}/external/utils/CMakeLists.txt")
+if (NOT EXISTS "${PROJECT_SOURCE_DIR}/external/gtest/CMakeLists.txt"
+        OR NOT EXISTS "${PROJECT_SOURCE_DIR}/external/utf8/CMakeLists.txt"
+        OR NOT EXISTS "${PROJECT_SOURCE_DIR}/external/utils/CMakeLists.txt")
     message(FATAL_ERROR "Missing submodules! Please initialize and update submodules.")
 endif ()
 
