@@ -14,3 +14,8 @@ target_link_libraries(${This} PRIVATE JsonKit)
 
 include(GoogleTest)
 gtest_discover_tests(${This})
+
+add_test(
+        NAME ${This}
+        COMMAND ${This}
+)
